@@ -1,0 +1,56 @@
+﻿<section id="menu">
+
+	<!-- Search -->
+		<section>
+			<form class="search" method="get" action="#">
+				<input type="text" name="query" placeholder="Search" />
+			</form>
+		</section>
+
+	<!-- Links -->
+		<section>
+			<ul class="links">
+				<li>
+					<a href="/">
+						<h3>Главная</h3>
+						<p>Переход на главную старницу</p>
+					</a>
+				</li>
+				<li>
+					<a asp-area="" asp-controller="Services" asp-action ="Index" asp-route-id="">
+						<h3>Услуги</h3>
+						<p>Посмотреть доступные услуги</p>
+					</a>
+				</li>
+				<li>
+					<a href="/Home/Contacts">
+						<h3>Контакты</h3>
+						<p>Как нас найти или связаться</p>
+					</a>
+				</li>
+				<li>
+					<a href="/Home/PageAboutUs">
+						<h3>О нас</h3>
+						<p>Краткое пользовательское руководство</p>
+					</a>
+				</li>
+			
+			</ul>
+		</section>
+
+	<!-- Actions -->
+	@if(!User.Identity.IsAuthenticated)
+	{
+		<section>
+			<ul class="actions stacked">
+				<li><a href="/account/login" class="button large fit">Вход</a></li>
+				@*<li><a asp-area="Identity" asp-page="/Account/Login" class="button large fit">Вход</a></li>*@
+			</ul>
+			<ul class="actions stacked">
+				<li><a href="/account/Register" class="button large fit">Регистрация</a></li>
+			</ul>
+		</section>
+	}
+		
+
+</section>

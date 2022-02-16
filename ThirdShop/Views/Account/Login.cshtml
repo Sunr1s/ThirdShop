@@ -1,0 +1,37 @@
+﻿@model LoginViewModel
+<div>
+    <h1>Вход в личный кабинет</h1>
+    <div class="div-box">
+        <form asp-area="" asp-controller="Account" asp-action="Login" method="post" asp-route-returnUrl="@ViewBag.returnUrl">
+            <div asp-validation-summary="All"></div>
+           	<div class="row gtr-uniform">
+			<div class="col-6 col-12-xsmall">
+                <label asp-for="UserName"></label>
+                <input asp-for="UserName" />
+                <span asp-validation-for="UserName"></span>
+            </div>
+               </div>
+            <div class="row gtr-uniform">
+			<div class="col-6 col-12-xsmall">
+                <label asp-for="Password"></label>
+                <input asp-for="Password" class ="login" />
+                <span asp-validation-for="Password"></span>
+            </div>
+               </div></br>
+           <div class="col-6 col-12-small">
+                <input type="checkbox" id="demo-human" name="demo-human" checked>
+                <label  for="RememberMe">Запомнить меня?</label>
+                <input asp-for="RememberMe" />
+                <span asp-validation-for="RememberMe"></span>
+            </div>
+            <div>
+                <input type="submit" value="Войти" />
+                <a asp-controller="Account" asp-action="Register" class="button">Регистрация</a>
+                <a href="/account/ForgotPassword" class="button">Забыли пароль?</a>
+              
+            </div>
+         
+             
+        </form>
+    </div>
+</div>

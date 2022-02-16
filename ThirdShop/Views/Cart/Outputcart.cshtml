@@ -1,0 +1,90 @@
+﻿@model IQueryable<UserCart>
+@*@using (Html.BeginForm())
+{
+    @Html.DisplayText(Model.Title)
+}*@
+@{
+    string strTitle = "Корзина";
+    ViewBag.Title = strTitle;
+}
+
+<script src="~/js/ckeditor/ckeditor.js"></script>
+
+<div>
+    <h2>@strTitle</h2>
+   
+
+@if (Model.Any())
+{
+	
+
+    @foreach (UserCart entity in Model)
+    {
+		
+		<section>
+			<ul class="posts">
+				<li>
+					<article>
+						<header>
+							<h3><a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id">@entity.Title</a></h3>
+						
+						<form method="post" asp-area="" asp-controller="Cart" asp-action="Delete">
+											
+											<input id="names" name="id" type="hidden" value="@entity.Id" />
+											<h4><input type="submit" value="Удалить" /></h4>
+											
+										</form>
+						@*<h4><a method="post" asp-area="" asp-controller="Cart" asp-action="Delete" >Удалить</a></h4>
+						<input id="names" name="id" type="hidden" value="@entity.Id" /*@
+						</header>
+							<a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id" class="image"><img src="~/images/@entity.MiniImagePath" alt="" /></a>
+					</article>
+				</li>
+			</ul>
+		</section>
+    }
+		<div class="table-wrapper">
+				<table>
+					<thead>
+						<tr>
+							<th>Название</th>
+							<th>Описание</th>
+							<th>Код товара</th>
+							<th>Цена</th>
+						</tr>
+					</thead>
+					<tbody>
+		
+		  @{
+			  double price =0;
+		  }
+	  @foreach (UserCart entity in Model)
+    {
+		  price = @entity.Price + price ;
+					<tr>
+						<td>@entity.Title</td>
+						<td>@entity.Undertitle</td>
+						<td>@entity.ProductCode</td>
+						<td>@entity.Price ₴</td>
+					</tr>
+				
+	}
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="3"></td>
+							<td>@price ₴</td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+}
+else
+{
+	<div><h3>Корзина пуста!</h3></div>
+}
+
+	
+</div>
+
+

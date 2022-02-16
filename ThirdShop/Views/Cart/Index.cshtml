@@ -1,0 +1,29 @@
+﻿@model ServiceItem
+@{
+    string strTitle = "Подтвердить добавление в коризу";
+    ViewBag.Title = strTitle;
+}
+
+<section>
+			<ul class="posts">
+				<li>
+					<article>
+						<header>
+							<h3><a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@Model.Id">@Model.Title</a></h3>
+						<time class="published" datetime="2015-10-20">@Model.DateAdded.Date.ToString("d")</time>
+						<input id="names" name="id" type="hidden" value="@Model.Id" />
+						</header>
+							<a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@Model.Id" class="image"><img src="~/images/@Model.MiniImagePath" alt="" /></a>
+					</article></br>
+						<form method="post" asp-controller="Cart" asp-action="AddToCart"   >
+											<input id="names" name="Title" type="hidden" value="@Model.Title" />
+											<input id="names" name="Price" type="hidden" value="@Model.Price" />
+											<input id="names" name="ProductCode" type="hidden" value="@Model.ProductCode" />
+											<input id="names" name="MiniImage" type="hidden" value="@Model.MiniImagePath" />
+											<input id="names" name="SubTitle" type="hidden" value="@Model.Undertitle" />
+											<input id="names" name="id" type="hidden" value="@Model.Id" />
+											<input type="submit" value="Купить" />
+											
+										</form>
+			</ul>
+		</section>

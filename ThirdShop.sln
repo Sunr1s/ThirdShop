@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThirdShop", "ThirdShop\ThirdShop.csproj", "{20A75CA3-6130-4F92-B636-BA60FF1340AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20A75CA3-6130-4F92-B636-BA60FF1340AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20A75CA3-6130-4F92-B636-BA60FF1340AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20A75CA3-6130-4F92-B636-BA60FF1340AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20A75CA3-6130-4F92-B636-BA60FF1340AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EFC2F31E-CE4E-4B68-8182-2F0297FC8809}
+	EndGlobalSection
+EndGlobal

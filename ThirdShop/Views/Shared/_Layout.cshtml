@@ -1,0 +1,38 @@
+﻿<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		@await Html.PartialAsync("MetaTagsPartial")
+		@await Html.PartialAsync("CssPartial")
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- Header -->
+				@await Html.PartialAsync("HeaderPartial")
+				<!-- Menu -->
+				@await Html.PartialAsync("MenuPartial")
+				<!-- Main -->
+					<div id="main">
+						<!-- Post -->
+							@*@await Html.PartialAsync("PostSample")*@
+						@RenderBody()
+						<!-- Pagination -->
+							@*<ul class="actions pagination">
+								<li><a href="" class="disabled button large previous">Previous Page</a></li>
+								<li><a href="#" class="button large next">Next Page</a></li>
+							</ul>*@
+					</div>
+				<!-- Sidebar -->
+				
+				@await Html.PartialAsync("SideBarPartial")
+				@*@await Html.PartialAsync("FooterPartial")*@
+			</div>
+		<!-- Scripts -->
+		@await Html.PartialAsync("ScriptsPartial")
+	</body>
+</html>

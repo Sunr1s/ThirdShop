@@ -1,0 +1,58 @@
+﻿@model ServiceItem
+@{
+    ViewBag.Title = Model.MetaTitle;
+    ViewBag.Description = Model.MetaDescription;
+    ViewBag.Keywords = Model.MetaKeywords;
+}
+
+	<body class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- Main -->
+					<div id="main">
+					<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2><a href="#">@Model.Title</a></h2>
+										@*<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>*@
+									</div>
+									<div class="meta">
+										<p  class="published"><span class="name">Цена: @Model.Price₴</span></p>
+										<a href="#" class="author"><span class="name">Код товара: @Model.ProductCode</span><img src="images/avatar.jpg" alt="" /></a>
+								  </div>
+								</header>
+								<span class="image featured"><img src="~/images/@Model.TitleImagePath" alt="" /></span>
+								   @Html.Raw(Model.Text)
+								<footer>
+									<ul class="stats">			
+										<form method="post" asp-area="" asp-controller="Cart" asp-action="Index"  >
+											<input id="names" name="id" type="hidden" value="@Model.Id" />
+											<input type="submit" value="Купить" />
+											<li><a href="#" class="icon solid fa-heart">28</a></li>
+											<li><a href="#" class="icon solid fa-comment">128</a></li>
+										</form>
+									</ul>
+								</footer>
+							</article>
+					</div>
+				<!-- Footer -->
+					@*@Html.PartialAsync()*@
+			</div>
+	</body>
+
+@*<div>
+    <h2>
+        @Model.Title
+    </h2>
+    <h2>
+        @Model.Subtitle
+    </h2>
+    <div>
+        <img class="img-block" src="~/images/@Model.TitleImagePath" />
+    </div>
+</div>
+<div>
+    @Html.Raw(Model.Text)
+</div>*@

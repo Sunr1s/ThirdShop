@@ -1,0 +1,40 @@
+﻿@model RegisterViewModel
+ <div>
+    <h1>Регистрация нового пользователя</h1>
+    <div class="div-box">
+        <form method="post" asp-controller="Account" asp-action="Register">
+            <div asp-validation-summary="ModelOnly"></div>
+           <div class="row gtr-uniform">
+			<div class="col-6 col-12-xsmall">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" />
+                <span asp-validation-for="Email"></span>
+            </div>
+             </div>
+           <div class="row gtr-uniform">
+			<div class="col-6 col-12-xsmall">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" />
+                <span asp-validation-for="Name"></span>
+            </div>
+             </div>
+          <div class="row gtr-uniform">
+			<div class="col-6 col-12-xsmall">
+                <label asp-for="Password"></label>
+                <input asp-for="Password" />
+                <span asp-validation-for="Password"></span>
+            </div>
+             </div>
+          <div class="row gtr-uniform">
+			<div class="col-6 col-12-xsmall">
+                <label asp-for="PasswordConfirm"></label>
+                <input asp-for="PasswordConfirm" />
+                <span asp-validation-for="PasswordConfirm"></span>
+                 </div>
+            </div></br>
+            <div>
+                <input type="submit" value="Регистрация" />
+            </div>
+        </form>
+    </div>
+</div>

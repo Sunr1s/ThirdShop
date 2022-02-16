@@ -1,0 +1,107 @@
+﻿@model IQueryable<ServiceItem>
+@{
+    TextField textField = ViewBag.TextField;
+}
+
+<section id="sidebar">
+
+	<!-- Intro -->
+		<section id="intro">
+			<a href="#" class="logo"><img src="~/images/logo.jpg" alt="" /></a>
+			<header>
+				<h2>@Config.CompanyName</h2>
+				<p>@Config.CompanyDevis</a></p>
+			</header>
+		</section>
+
+	<!-- Mini Posts -->
+	
+@if (Model?.Any() == true)
+{ 
+	<section>
+			<ul class="posts">
+		@foreach (ServiceItem entity in Model)
+        {
+			 
+		<!-- Mini Post -->
+			@*<article class="mini-post">
+				<header>
+					<h3><a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id">@entity.Title</a></h3>
+					<time class="published" datetime="2015-10-20">@entity.DateAdded.Date.ToString("d")</time>
+					<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
+				</header>
+				<a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id" class="image"><img src="~/images/@entity.MiniImagePath" alt="" /></a>
+			</article>*@
+			<li>
+				<article>
+					<header>
+						<h3><a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id">@entity.Title</a></h3>
+					<time class="published" datetime="2015-10-20">@entity.DateAdded.Date.ToString("d")</time>
+					</header>
+						<a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id" class="image"><img src="~/images/@entity.MiniImagePath" alt="" /></a>
+				</article>
+			</li>
+		}
+		</ul>
+	</section>
+	<section>
+					<div class="mini-posts">
+		@foreach (ServiceItem entity in Model)
+        {
+			 
+		<!-- Mini Post -->
+			<article class="mini-post">
+				<header>
+					<h3><a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id">@entity.Title</a></h3>
+					<time class="published" datetime="2015-10-20">@entity.DateAdded.Date.ToString("d")</time>
+					<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
+				</header>
+				<a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id" class="image"><img src="~/images/@entity.TitleImagePath" alt="" /></a>
+			</article>
+			 
+		}
+		</div>
+	</section>
+
+
+	@*<!-- Posts List -->
+		<section>
+			<ul class="posts">
+			@foreach (ServiceItem entity in Model)
+            {
+				<li>
+					<article>
+						<header>
+							<h3><a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id">@entity.Subtitle</a></h3>
+							<time class="published" datetime="2015-10-20">October 20, 2015</time>
+						</header>
+						<a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id" class="image"><img src="~/images/@entity.TitleImagePath" alt="" /></a>
+					</article>
+				</li>	
+			}
+			</ul>
+		</section>*@
+}
+	<!-- About -->
+
+			<section class="blurb">
+				<h2>Про Нас</h2>
+				<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod amet placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at phasellus sed ultricies.</p>
+				<ul class="actions">
+					<li><a asp-area="" asp-controller="Home" asp-action="PageAboutUs" class="button">Детальней</a></li>
+				</ul>
+			</section>
+		
+	<!-- Footer -->
+		<section id="footer">
+			<ul class="icons">
+				<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+				<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+				<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+			</ul>
+			<p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
+		</section>
+
+</section>

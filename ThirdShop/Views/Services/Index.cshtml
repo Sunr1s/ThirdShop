@@ -1,0 +1,57 @@
+﻿@model IQueryable<ServiceItem>
+@{
+    TextField textField = ViewBag.TextField;
+
+    ViewBag.Title = textField.MetaTitle;
+    ViewBag.Description = textField.MetaDescription;
+    ViewBag.Keywords = textField.MetaKeywords;
+}
+
+
+@*<ul class="big-image-list">
+    @foreach (ServiceItem entity in Model)
+    {
+    <li>
+    <a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id">
+    <img src="~/images/@entity.TitleImagePath" alt="" class="left" />
+    
+    <h4>@entity.Title</h4>
+    <p>@entity.Subtitle</p>
+    </li>
+
+    </ul>*@
+@if (Model.Any())
+{
+    @foreach (ServiceItem entity in Model)
+    {
+        <article class="post">
+            <header>
+                <div class="title">
+                    <h2><a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id">@entity.Title</a></h2>
+                   @* <p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>*@
+                </div>
+                <div class="meta">
+                   @* <time class="published" datetime="2015-11-01">@entity.DateAdded.Date.ToString("d")</time>*@
+                     <p  class="published"><span class="name">Цена: @entity.Price₴</span></p>
+                    <a href="#" class="author"><span class="name">Код товара: @entity.ProductCode</span><img src="images/avatar.jpg" alt="" /></a>
+                </div>
+            </header>
+            <a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id" class="image featured"><img src="~/images/@entity.TitleImagePath" alt="" class="left" /></a>
+            <p>@entity.Subtitle</p>
+            <footer>
+                <ul class="actions">
+                    <li><a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id" class="button large">Детальней</a></li>
+                </ul>
+                <ul class="stats">
+                  <form method="post" asp-area="" asp-controller="Cart" asp-action="Index"  asp-route-id="@entity.Id"  >
+						<input id="names" name="id" type="hidden" value="@entity.Id" />
+						<input class ="button small" type="submit" value="Купить" />
+                         <li><a href="#" class="icon solid fa-heart">28</a></li>
+						<li><a href="#" class="icon solid fa-comment">128</a></li>
+				 </form>
+                
+                </ul>
+            </footer>
+        </article>
+    }
+}

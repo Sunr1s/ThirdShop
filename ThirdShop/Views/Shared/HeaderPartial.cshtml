@@ -1,0 +1,38 @@
+﻿<header id="header">
+	<h1><a href="/">@Config.CompanyName</a></h1>
+	<nav class="links">
+		<ul>
+			<li><a href="/">Главная</a></li>
+			<li><a asp-area="" asp-controller="Services" asp-action ="Index" asp-route-id="">Услуги</a></li>
+			<li><a href="/Home/Contacts">Контакты</a></li>
+			<li><a href="/Home/PageAboutUs">О нас</a></li>
+			@if(User.Identity.IsAuthenticated)
+			{
+			 <li><a method="post" asp-area="" asp-controller="Account" asp-action="Logout">Выход</a></li>
+			 @if(User.IsInRole("admin"))
+			 { 
+				   <li><a method="post" asp-area="Admin" asp-controller="Home" asp-action="Index">Добро пожаловать   <u >@User.Identity.Name</u></a></li> 
+			 }
+			 else
+			 {
+				 <li><a method="post" asp-controller="Cart" asp-action="OutputCart">Добро пожаловать   <u >@User.Identity.Name</u>  </a></li>
+			 }
+			
+			}
+			
+		</ul>
+	</nav>
+	<nav class="main">
+		<ul>
+			<li class="search">
+				<a class="fa-search" href="#search">Search</a>
+				<form id="search" method="get" action="#">
+					<input type="text" name="query" placeholder="Search" />
+				</form>
+			</li>
+			<li class="menu">
+				<a class="fa-bars" href="#menu">Menu</a>
+			</li>
+		</ul>
+	</nav>
+</header>
