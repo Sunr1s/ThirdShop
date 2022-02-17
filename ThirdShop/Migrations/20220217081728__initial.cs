@@ -53,6 +53,7 @@ namespace ThirdShop.Migrations
                     Id = table.Column<Guid>(nullable: false),
                     TitleImagePath = table.Column<string>(nullable: true),
                     MiniImagePath = table.Column<string>(nullable: true),
+                    guid = table.Column<Guid>(nullable: false),
                     MetaTitle = table.Column<string>(nullable: true),
                     MetaDescription = table.Column<string>(nullable: true),
                     MetaKeywords = table.Column<string>(nullable: true),
@@ -82,6 +83,7 @@ namespace ThirdShop.Migrations
                     IsinCart = table.Column<bool>(nullable: false),
                     TitleImagePath = table.Column<string>(nullable: true),
                     MiniImagePath = table.Column<string>(nullable: true),
+                    guid = table.Column<Guid>(nullable: false),
                     MetaTitle = table.Column<string>(nullable: true),
                     MetaDescription = table.Column<string>(nullable: true),
                     MetaKeywords = table.Column<string>(nullable: true),
@@ -105,13 +107,14 @@ namespace ThirdShop.Migrations
                     Text = table.Column<string>(nullable: true),
                     IsinCart = table.Column<bool>(nullable: false),
                     TitleImagePath = table.Column<string>(nullable: true),
-                    MiniImagePath = table.Column<string>(nullable: true),
                     MetaTitle = table.Column<string>(nullable: true),
                     MetaDescription = table.Column<string>(nullable: true),
                     MetaKeywords = table.Column<string>(nullable: true),
                     Title = table.Column<string>(nullable: false),
                     ProductCode = table.Column<string>(nullable: true),
                     Price = table.Column<double>(nullable: false),
+                    MiniImagePath = table.Column<string>(nullable: true),
+                    guid = table.Column<Guid>(nullable: false),
                     DateAdded = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
@@ -228,22 +231,22 @@ namespace ThirdShop.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "44546e06-8719-4ad8-b88a-f271ae9d6eab", "fc7ebc99-f66c-4c1d-9386-93320b9ea74a", "admin", "ADMIN" });
+                values: new object[] { "44546e06-8719-4ad8-b88a-f271ae9d6eab", "1f7927c7-4a40-4174-bc3e-aa27cbeee5e5", "admin", "ADMIN" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "3b62472e-4f66-49fa-a20f-e7685b9565d8", 0, "abb40428-5e01-4d26-9ae8-3190aba54380", "my@email.com", true, false, null, "MY@EMAIL.COM", "ADMIN", "AQAAAAEAACcQAAAAEK2hMOOpw9bu9/Pa95AIddlDsR924t4IRSAr21IiydNAn9xy2HjDKOLeoLDaR3ai9A==", null, false, "", false, "admin" });
+                values: new object[] { "3b62472e-4f66-49fa-a20f-e7685b9565d8", 0, "00788b2a-145a-4d68-a3a2-6b14750a4abd", "my@email.com", true, false, null, "MY@EMAIL.COM", "ADMIN", "AQAAAAEAACcQAAAAEI6KXFsxZDqNjKJODtuLJL+RsBKD2ZN6xNWr+tnw7YEbYzp86Q8hNt3Xv5mGMdfftQ==", null, false, "", false, "admin" });
 
             migrationBuilder.InsertData(
                 table: "TextFields",
-                columns: new[] { "Id", "CodeWord", "DateAdded", "IsinCart", "MetaDescription", "MetaKeywords", "MetaTitle", "MiniImagePath", "Price", "ProductCode", "Subtitle", "Text", "Title", "TitleImagePath", "Undertitle" },
+                columns: new[] { "Id", "CodeWord", "DateAdded", "IsinCart", "MetaDescription", "MetaKeywords", "MetaTitle", "MiniImagePath", "Price", "ProductCode", "Subtitle", "Text", "Title", "TitleImagePath", "Undertitle", "guid" },
                 values: new object[,]
                 {
-                    { new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"), "PageIndex", new DateTime(2022, 2, 13, 12, 45, 2, 229, DateTimeKind.Utc).AddTicks(7115), false, null, null, null, null, 0.0, null, null, "Содержание заполняется администратором", "Главная", null, null },
-                    { new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"), "PageServices", new DateTime(2022, 2, 13, 12, 45, 2, 229, DateTimeKind.Utc).AddTicks(8613), false, null, null, null, null, 0.0, null, null, "Содержание заполняется администратором", "Наши услуги", null, null },
-                    { new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"), "PageContacts", new DateTime(2022, 2, 13, 12, 45, 2, 229, DateTimeKind.Utc).AddTicks(8669), false, null, null, null, null, 0.0, null, null, "Содержание заполняется администратором", "Контакты", null, null },
-                    { new Guid("c8353f35-6dc4-4bb7-b447-279e6bbb9ea6"), "PageAboutUs", new DateTime(2022, 2, 13, 12, 45, 2, 229, DateTimeKind.Utc).AddTicks(8695), false, null, null, null, null, 0.0, null, null, "Содержание заполняется администратором", "О нас", null, null }
+                    { new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"), "PageIndex", new DateTime(2022, 2, 17, 8, 17, 28, 331, DateTimeKind.Utc).AddTicks(4353), false, null, null, null, null, 0.0, null, null, "Содержание заполняется администратором", "Главная", null, null, new Guid("00000000-0000-0000-0000-000000000000") },
+                    { new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"), "PageServices", new DateTime(2022, 2, 17, 8, 17, 28, 331, DateTimeKind.Utc).AddTicks(5825), false, null, null, null, null, 0.0, null, null, "Содержание заполняется администратором", "Наши услуги", null, null, new Guid("00000000-0000-0000-0000-000000000000") },
+                    { new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"), "PageContacts", new DateTime(2022, 2, 17, 8, 17, 28, 331, DateTimeKind.Utc).AddTicks(5879), false, null, null, null, null, 0.0, null, null, "Содержание заполняется администратором", "Контакты", null, null, new Guid("00000000-0000-0000-0000-000000000000") },
+                    { new Guid("c8353f35-6dc4-4bb7-b447-279e6bbb9ea6"), "PageAboutUs", new DateTime(2022, 2, 17, 8, 17, 28, 331, DateTimeKind.Utc).AddTicks(5900), false, null, null, null, null, 0.0, null, null, "Содержание заполняется администратором", "О нас", null, null, new Guid("00000000-0000-0000-0000-000000000000") }
                 });
 
             migrationBuilder.InsertData(

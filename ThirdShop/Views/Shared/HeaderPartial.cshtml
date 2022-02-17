@@ -8,15 +8,15 @@
 			<li><a href="/Home/PageAboutUs">О нас</a></li>
 			@if(User.Identity.IsAuthenticated)
 			{
-			 <li><a method="post" asp-area="" asp-controller="Account" asp-action="Logout">Выход</a></li>
-			 @if(User.IsInRole("admin"))
-			 { 
-				   <li><a method="post" asp-area="Admin" asp-controller="Home" asp-action="Index">Добро пожаловать   <u >@User.Identity.Name</u></a></li> 
-			 }
-			 else
-			 {
-				 <li><a method="post" asp-controller="Cart" asp-action="OutputCart">Добро пожаловать   <u >@User.Identity.Name</u>  </a></li>
-			 }
+				 <li><a method="post" asp-area="" asp-controller="Account" asp-action="Logout">Выход</a></li>
+				 @if(User.IsInRole("admin"))
+				 { 
+					   <li><a method="post" asp-area="Admin" asp-controller="Home" asp-action="Index">Добро пожаловать   <u >@User.Identity.Name</u></a></li> 
+				 }
+				 else
+				 {
+					 <li><a method="post" asp-controller="Cart" asp-action="OutputCart">Добро пожаловать   <u >@User.Identity.Name</u>  </a></li>
+				 }
 			
 			}
 			

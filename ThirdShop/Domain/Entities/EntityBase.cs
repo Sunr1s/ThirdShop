@@ -37,6 +37,9 @@ namespace ThirdShop.Domain.Entities
         [Display(Name = "Цена")]
         public virtual double Price { get; set; }
 
+        [Display(Name = "Id  Владельца корзины")]
+        public virtual Guid guid { get; set; }
+
         [Display(Name = "SEO метатег Title")]
         public string MetaTitle { get; set; }
 

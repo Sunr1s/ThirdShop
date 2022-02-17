@@ -18,8 +18,8 @@ namespace ThirdShop.Domain.Entities
         [Display(Name = "Мини картинка")]
         public override string MiniImagePath { get; set; }
 
-        //[Display(Name = "Id  Владельца корзины")]
-        //public Guid guid { get; set; }
+        [Display(Name = "Id  Владельца корзины")]
+        public override Guid guid { get; set; }
 
         [DataType(DataType.Time)]
         public  DateTime DateAdded { get; set; }

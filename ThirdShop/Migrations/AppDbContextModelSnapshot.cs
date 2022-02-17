@@ -49,7 +49,7 @@ namespace ThirdShop.Migrations
                         new
                         {
                             Id = "44546e06-8719-4ad8-b88a-f271ae9d6eab",
-                            ConcurrencyStamp = "fc7ebc99-f66c-4c1d-9386-93320b9ea74a",
+                            ConcurrencyStamp = "1f7927c7-4a40-4174-bc3e-aa27cbeee5e5",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         });
@@ -148,13 +148,13 @@ namespace ThirdShop.Migrations
                         {
                             Id = "3b62472e-4f66-49fa-a20f-e7685b9565d8",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "abb40428-5e01-4d26-9ae8-3190aba54380",
+                            ConcurrencyStamp = "00788b2a-145a-4d68-a3a2-6b14750a4abd",
                             Email = "my@email.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "MY@EMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEK2hMOOpw9bu9/Pa95AIddlDsR924t4IRSAr21IiydNAn9xy2HjDKOLeoLDaR3ai9A==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEI6KXFsxZDqNjKJODtuLJL+RsBKD2ZN6xNWr+tnw7YEbYzp86Q8hNt3Xv5mGMdfftQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -295,6 +295,9 @@ namespace ThirdShop.Migrations
                     b.Property<string>("Undertitle")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid>("guid")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("Id");
 
                     b.ToTable("ServiceItems");
@@ -349,6 +352,9 @@ namespace ThirdShop.Migrations
                     b.Property<string>("Undertitle")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid>("guid")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("Id");
 
                     b.ToTable("TextFields");
@@ -358,41 +364,45 @@ namespace ThirdShop.Migrations
                         {
                             Id = new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"),
                             CodeWord = "PageIndex",
-                            DateAdded = new DateTime(2022, 2, 13, 12, 45, 2, 229, DateTimeKind.Utc).AddTicks(7115),
+                            DateAdded = new DateTime(2022, 2, 17, 8, 17, 28, 331, DateTimeKind.Utc).AddTicks(4353),
                             IsinCart = false,
                             Price = 0.0,
                             Text = "Содержание заполняется администратором",
-                            Title = "Главная"
+                            Title = "Главная",
+                            guid = new Guid("00000000-0000-0000-0000-000000000000")
                         },
                         new
                         {
                             Id = new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"),
                             CodeWord = "PageServices",
-                            DateAdded = new DateTime(2022, 2, 13, 12, 45, 2, 229, DateTimeKind.Utc).AddTicks(8613),
+                            DateAdded = new DateTime(2022, 2, 17, 8, 17, 28, 331, DateTimeKind.Utc).AddTicks(5825),
                             IsinCart = false,
                             Price = 0.0,
                             Text = "Содержание заполняется администратором",
-                            Title = "Наши услуги"
+                            Title = "Наши услуги",
+                            guid = new Guid("00000000-0000-0000-0000-000000000000")
                         },
                         new
                         {
                             Id = new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"),
                             CodeWord = "PageContacts",
-                            DateAdded = new DateTime(2022, 2, 13, 12, 45, 2, 229, DateTimeKind.Utc).AddTicks(8669),
+                            DateAdded = new DateTime(2022, 2, 17, 8, 17, 28, 331, DateTimeKind.Utc).AddTicks(5879),
                             IsinCart = false,
                             Price = 0.0,
                             Text = "Содержание заполняется администратором",
-                            Title = "Контакты"
+                            Title = "Контакты",
+                            guid = new Guid("00000000-0000-0000-0000-000000000000")
                         },
                         new
                         {
                             Id = new Guid("c8353f35-6dc4-4bb7-b447-279e6bbb9ea6"),
                             CodeWord = "PageAboutUs",
-                            DateAdded = new DateTime(2022, 2, 13, 12, 45, 2, 229, DateTimeKind.Utc).AddTicks(8695),
+                            DateAdded = new DateTime(2022, 2, 17, 8, 17, 28, 331, DateTimeKind.Utc).AddTicks(5900),
                             IsinCart = false,
                             Price = 0.0,
                             Text = "Содержание заполняется администратором",
-                            Title = "О нас"
+                            Title = "О нас",
+                            guid = new Guid("00000000-0000-0000-0000-000000000000")
                         });
                 });
 
@@ -441,6 +451,9 @@ namespace ThirdShop.Migrations
 
                     b.Property<string>("Undertitle")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("guid")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 

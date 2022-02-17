@@ -24,14 +24,6 @@
         {
 			 
 		<!-- Mini Post -->
-			@*<article class="mini-post">
-				<header>
-					<h3><a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id">@entity.Title</a></h3>
-					<time class="published" datetime="2015-10-20">@entity.DateAdded.Date.ToString("d")</time>
-					<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
-				</header>
-				<a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id" class="image"><img src="~/images/@entity.MiniImagePath" alt="" /></a>
-			</article>*@
 			<li>
 				<article>
 					<header>
@@ -62,25 +54,6 @@
 		}
 		</div>
 	</section>
-
-
-	@*<!-- Posts List -->
-		<section>
-			<ul class="posts">
-			@foreach (ServiceItem entity in Model)
-            {
-				<li>
-					<article>
-						<header>
-							<h3><a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id">@entity.Subtitle</a></h3>
-							<time class="published" datetime="2015-10-20">October 20, 2015</time>
-						</header>
-						<a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id" class="image"><img src="~/images/@entity.TitleImagePath" alt="" /></a>
-					</article>
-				</li>	
-			}
-			</ul>
-		</section>*@
 }
 	<!-- About -->
 

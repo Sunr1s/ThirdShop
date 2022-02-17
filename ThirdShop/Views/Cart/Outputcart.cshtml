@@ -16,8 +16,6 @@
 
 @if (Model.Any())
 {
-	
-
     @foreach (UserCart entity in Model)
     {
 		
@@ -27,15 +25,10 @@
 					<article>
 						<header>
 							<h3><a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id">@entity.Title</a></h3>
-						
-						<form method="post" asp-area="" asp-controller="Cart" asp-action="Delete">
-											
-											<input id="names" name="id" type="hidden" value="@entity.Id" />
-											<h4><input type="submit" value="Удалить" /></h4>
-											
-										</form>
-						@*<h4><a method="post" asp-area="" asp-controller="Cart" asp-action="Delete" >Удалить</a></h4>
-						<input id="names" name="id" type="hidden" value="@entity.Id" /*@
+							<form method="post" asp-area="" asp-controller="Cart" asp-action="Delete">									
+								<input id="names" name="id" type="hidden" value="@entity.Id" />
+								<h4><input type="submit" value="Удалить" /></h4>			
+							</form>	
 						</header>
 							<a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id" class="image"><img src="~/images/@entity.MiniImagePath" alt="" /></a>
 					</article>
@@ -58,17 +51,16 @@
 		  @{
 			  double price =0;
 		  }
-	  @foreach (UserCart entity in Model)
-    {
-		  price = @entity.Price + price ;
-					<tr>
-						<td>@entity.Title</td>
-						<td>@entity.Undertitle</td>
-						<td>@entity.ProductCode</td>
-						<td>@entity.Price ₴</td>
-					</tr>
-				
-	}
+		@foreach (UserCart entity in Model)
+		 {
+		    price = @entity.Price + price ;
+			<tr>
+				<td>@entity.Title</td>
+				<td>@entity.Undertitle</td>
+				<td>@entity.ProductCode</td>
+				<td>@entity.Price ₴</td>
+			</tr>	
+		 }
 					</tbody>
 					<tfoot>
 						<tr>
@@ -83,8 +75,6 @@ else
 {
 	<div><h3>Корзина пуста!</h3></div>
 }
-
-	
 </div>
 
 
